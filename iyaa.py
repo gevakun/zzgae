@@ -464,15 +464,15 @@ pembuat=["u8ae7ccff22103d8de798f6c893c6c9db"]
 wait = {
     'contact':False,
     'autoJoin':True,
-    'autoCancel':{"on":True,"members":1},
+    'autoCancel':{"on":False,"members":1},
     'leaveRoom':True,
     'timeline':True,
     'autoAdd':True,
     'detectMention':True,    
     'kickMention':False,
     'creatorMention':True,
-    'message':"cie ngeadd yaa makasihh",
-    'message2':"Cuman creator yg bisa inpit grup",
+    'message':"Asik,, makasih ya udh add :)",
+    'message2':"Jangan lupa invite aku ke grup mu !",
     "lang":"JP",
     "comment1":"Nice kak",
     "comment2":"Wkwkwk ＼（○＾ω＾○）／",
@@ -508,9 +508,9 @@ wait = {
     "Backup":True,
     "protectionOn":False,
     "atjointicket":True,
-    "Pap":["https://i.imgflip.com/1bqcxs.jpg","http://kucingpedia.com/wp-content/uploads/2016/06/Gambar-Kucing-Gemuk-Lucu.jpg","https://cdn.brilio.net/news/2015/06/23/6759/750xauto-25-meme-kucing-yang-imut-ngegemesin-dan-bikin-ketawa-150623c.jpg","https://cdn.brilio.net/news/2015/06/23/6759/21164-meme-kucing-7-9.jpg","http://m.memegen.com/kccbqe.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ--0ihgvcclOlusyzB1I2pVfenjEfkA7emCu_NR-atnyDlLbh0"],
+    "Pap":["https://i.imgur.com/2oQrIT7.jpg, https://i.imgur.com/y0U96bw.jpg, https://i.imgur.com/4QnktLD.jpg, https://i.imgur.com/8XYtGuX.jpg, https://i.imgur.com/ANvRVcE.jpg, https://i.imgur.com/Pr2ONfy.jpg"],
     "SetKey":".",
-    "spam":"Hayo gw spamin lu inget lu harus tobat jgn deh lu lakuin yg gk gk smp ngancurin hiduplu hidup cuman sebentar",
+    "spam":"Hayo, aku spam kamu biar kamu tobat >:(",
     }
 with open('st2__b.json','r') as e:  
   wait['blacklist'] = json.load(e
@@ -953,7 +953,7 @@ def bot(op):
                G.preventJoinByTicket = False
                cl.updateGroup(G)
                cl.kickoutFromGroup(op.param1,[op.param2])
-               random.choice(KAC).sendText(op.param1,random.choice(KAC).getContact(op.param2).displayName + " Jangan otak atik  grup Njiiir")
+               random.choice(KAC).sendText(op.param1,random.choice(KAC).getContact(op.param2).displayName + " Jangan otak atik  grup yaa")
                G.preventJoinByTicket = True
                cl.updateGroup(G)
                wait["blacklist"][op.param2] = True
@@ -1042,7 +1042,7 @@ def bot(op):
               if wait["autoJoin"] == True:
                 if op.param2 in Bots + peminjam + creator:
                   cl.acceptGroupInvitation(op.param1)
-		  cl.sendText(op.param1,"☆Ketik ☞Help☜ Untuk Bantuan☆\n☆Harap Gunakan Dengan Bijak ^_^ ☆")	
+		  cl.sendText(op.param1,"☆Ketik ☞Help☜ Untuk Fitur☆\n☆Harap Gunakan Dengan Bijak ^_^ ☆")	
 		  cl.sendText(op.param1,helpMessage)
                 else:
                   cl.rejectGroupInvitation(op.param1)
@@ -1132,14 +1132,14 @@ def bot(op):
             if mid in op.param3:
                 G = cl.getGroup(op.param1)
                 if wait["autoJoin"] == True:
-                    if wait["autoCancel"]["on"] == True:
+                    if wait["autoCancel"]["on"] == False:
                         if len(G.members) <= wait["autoCancel"]["members"]:
                             cl.rejectGroupInvitation(op.param1)
                         else:
                             cl.acceptGroupInvitation(op.param1)
                     else:
                         cl.acceptGroupInvitation(op.param1)
-                elif wait["autoCancel"]["on"] == True:
+                elif wait["autoCancel"]["on"] == False:
                     if len(G.members) <= wait["autoCancel"]["members"]:
                         cl.rejectGroupInvitation(op.param1)
             else:
@@ -1216,7 +1216,7 @@ def bot(op):
                  if wait['detectMention'] == True:
                      contact = cl.getContact(msg.from_)
                      cName = contact.displayName
-                     balas = ["Don't Tag Me! iam Bussy!, ",cName + "Ada perlu apa, ?",cName + " pc aja klo urgent! sedang sibuk,", "kenapa, ", cName + " kangen?","kangen bilang gak usah tag tag, " + cName, "knp?, " + cName, "apasi?, " + cName + "?", "pulang gih, " + cName + "?","aya naon, ?" + cName + "Tersangkut -_-","Ada apa sih mblo?, "]
+                     balas = ["Ngapain tag aku kak ?, ",cName + "Ada perlu apa, ?",cName + " Kangen yaa?,", "kenapa, ", cName + " Kangen?","Kangen bilang gak usah tag tag hehe, " + cName, "knp?, " + cName, "apasi?, " + cName + "?", "pulang gih, " + cName + "?","aya naon, ?" + cName + "Tersangkut -_-","Ada apa sih mblo?, "]
                      ret_ = "." + random.choice(balas)
                      name = re.findall(r'@(\w+)', msg.text)
                      mention = ast.literal_eval(msg.contentMetadata["MENTION"])
@@ -1230,7 +1230,7 @@ def bot(op):
                  if wait['creatorMention'] == True:
                      contact = cl.getContact(msg.from_)
                      cName = contact.displayName
-                     balas = ["Ada apa sih?","ngapain tag gw?","kangen gw?","Lah jones ngapain tag gw?","klo penting pc gw aja?"]
+                     balas = ["Ada apa sih?","ngapain tag gw?","kangen gw?","Lah jones ngapain tag gw?","klo penting pc gw aja"]
                      ret_ = random.choice(balas)
                      name = re.findall(r'@(\w+)', msg.text)
                      mention = ast.literal_eval(msg.contentMetadata["MENTION"])
@@ -4065,7 +4065,7 @@ def bot(op):
 				msg.contentType = 13
 				msg.contentMetadata = {'mid': "uab1ca173166a362c69ef62d420f9f784"}
 				cl.sendMessage(msg)
-				cl.sendText(msg.to,"Pembuat kami")
+				cl.sendText(msg.to,"Pembuat kami ^")
             elif "Admin on @" in msg.text:
                 if msg.from_ in creator + peminjam:
                     print "[Command]Staff add executing"
@@ -4179,7 +4179,7 @@ def bot(op):
                         total = '\nThese %iuesrs have seen at the lastseen\npoint(｀・ω・´)\n\n%s' % (len(dataResult), datetime.now().strftime('%H:%M:%S') )
                         cl.sendText(msg.to, "• %s %s" % (grp, total))
                     else:
-                        cl.sendText(msg.to, "Sider ga bisa di read cek setpoint dulu bego tinggal ketik\nSetlastpoint\nkalo mau liat sider ketik\nViewlastseen")
+                        cl.sendText(msg.to, "Sider ga bisa di read cek setpoint dulu, tinggal ketik\nSetlastpoint\nkalo mau liat sider ketik\nViewlastseen")
                     print "Viewlastseen"
 #==========================================
             elif msg.text in ["Purge"]:
