@@ -512,9 +512,7 @@ wait = {
     "SetKey":".",
     "spam":"Hayo, aku spam kamu biar kamu tobat >:(",
     }
-with open('st2__b.json','r') as e:  
-  wait['blacklist'] = json.load(e
-
+	
 wait2 = {
     'readPoint':{},
     'readMember':{},
